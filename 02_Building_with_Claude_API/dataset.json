@@ -1,18 +1,38 @@
 [
   {
     "prompt_inputs": {
-      "height": "178 cm",
-      "weight": "68 kg",
-      "goal": "Marathon training with high carbohydrate intake and optimized pre/during/post-workout nutrition",
-      "restrictions": "Vegetarian, no nuts"
+      "feedback": "Customer A: 'We need faster delivery times - our business depends on quick turnaround.' Customer B: 'Delivery speed doesn't matter to us, but your prices are too high compared to competitors.' Customer C: 'Fast shipping is critical for our operations.' Customer D: 'I'd pay the same price if it meant better quality, but speed isn't important.' Customer E: 'You're too expensive and too slow - fix both.'"
     },
     "solution_criteria": [
-      "Meal plan covers full day with breakfast, lunch, dinner, and snacks",
-      "Includes pre-workout, during-workout, and post-workout nutrition strategies with appropriate timing",
-      "Emphasizes high carbohydrate intake suitable for endurance athlete",
-      "All meals respect vegetarian diet and nut-free restrictions"
+      "Synthesizes conflicting priorities into a single balanced action item",
+      "Addresses multiple customer concerns without favoring one over others",
+      "Expressed as one concise, actionable sentence"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a professional endurance athlete (marathon runner) requiring high carbohydrate intake and specific timing around training sessions, including pre-workout, during-workout, and post-workout nutrition strategies"
+    "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+    "scenario": "Testing with conflicting feedback opinions where customers request opposite improvements (e.g., some want faster delivery, others want lower prices), requiring the prompt to synthesize a balanced action item"
+  },
+  {
+    "prompt_inputs": {
+      "feedback": "Your product is absolutely terrible! I hate it so much. The worst purchase ever. Nothing works right and I'm extremely frustrated!"
+    },
+    "solution_criteria": [
+      "Transforms vague emotional language into a specific, concrete action item",
+      "Identifies at least one underlying problem implied by the feedback",
+      "Produces a single, concise, actionable sentence"
+    ],
+    "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+    "scenario": "Testing with highly emotional or vague feedback lacking specific details (e.g., 'Your product is terrible!' or 'Love it!'), requiring the prompt to infer concrete actionable insights"
+  },
+  {
+    "prompt_inputs": {
+      "feedback": "The product quality is excellent and arrived in perfect condition, but the packaging was flimsy and arrived partially damaged. Shipping took two weeks longer than promised, which was frustrating. However, the customer service team was incredibly helpful when I called about the delay. Overall, I'm happy with the product itself but disappointed with the delivery experience."
+    },
+    "solution_criteria": [
+      "Identifies a single primary action item that consolidates the multi-faceted feedback",
+      "Action item addresses the most critical issue across the feedback areas (quality, packaging, shipping, service)",
+      "Output is a concise one-sentence action item, not a list or multiple recommendations"
+    ],
+    "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+    "scenario": "Testing with multi-faceted feedback spanning different product/service areas (e.g., packaging complaints combined with quality praise combined with shipping issues), requiring the prompt to prioritize and consolidate into one primary action item"
   }
 ]

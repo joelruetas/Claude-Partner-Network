@@ -1,23 +1,53 @@
 [
   {
-    "output": "# One-Day Meal Plan for Marathon Training Athlete\n\n**Calorie Target:** Approximately 3,200 calories\n**Macronutrient Breakdown:** Protein (110g), Fat (85g), Carbs (480g)\n\n## Meal Plan:\n\n* **Breakfast (6:30 AM):** Oatmeal (100g dry weight) with banana (150g), sunflower seeds (20g), and whole milk (240ml).\n    * Protein: 15g, Fat: 12g, Carbs: 85g\n\n* **Pre-Workout Snack (9:00 AM - 2 hours before run):** White bread (80g) with jam (40g) and a glass of orange juice (250ml).\n    * Protein: 5g, Fat: 2g, Carbs: 75g\n\n* **During Workout (if running >90 min):** Sports drink with carbohydrates (500ml) or energy gels (40g carbs).\n    * Protein: 0g, Fat: 0g, Carbs: 40g\n\n* **Post-Workout Snack (12:00 PM - within 30 minutes):** Greek yogurt (200g, plain) with granola (40g) and berries (100g).\n    * Protein: 20g, Fat: 8g, Carbs: 55g\n\n* **Lunch (1:30 PM):** Chickpea and vegetable curry (chickpeas 150g cooked, mixed vegetables 200g) with basmati rice (150g cooked) and whole wheat roti (60g).\n    * Protein: 18g, Fat: 8g, Carbs: 95g\n\n* **Afternoon Snack (4:00 PM):** Hummus (50g) with whole wheat pita bread (60g) and cucumber slices (100g). Apple (150g).\n    * Protein: 8g, Fat: 6g, Carbs: 55g\n\n* **Dinner (7:00 PM):** Lentil and vegetable pasta (whole wheat pasta 120g cooked, red lentils 100g cooked, zucchini 150g, tomato sauce 100g) with olive oil (10ml) and parmesan cheese (20g).\n    * Protein: 22g, Fat: 8g, Carbs: 75g\n\n* **Evening Snack (9:30 PM):** Smoothie with Greek yogurt (150g), berries (100g), oats (30g), and honey (15g).\n    * Protein: 17g, Fat: 3g, Carbs: 50g\n\n---\n\n**Key Features:**\n- **High carbohydrate focus** (480g) supports marathon training and glycogen replenishment\n- **Strategic timing** with pre/post-workout nutrition for optimal performance and recovery\n- **All vegetarian** with plant-based and dairy protein sources\n- **Nut-free** (uses seeds and legumes instead)\n- **Budget-friendly** with affordable staples like oats, lentils, chickpeas, and seasonal fruits",
+    "output": "# Action Item\n\n**Conduct a pricing and delivery speed analysis to identify optimization opportunities that address the two primary customer concerns: reduce costs to compete on price and improve delivery times for time-sensitive customers.**",
     "test_case": {
       "prompt_inputs": {
-        "height": "178 cm",
-        "weight": "68 kg",
-        "goal": "Marathon training with high carbohydrate intake and optimized pre/during/post-workout nutrition",
-        "restrictions": "Vegetarian, no nuts"
+        "feedback": "Customer A: 'We need faster delivery times - our business depends on quick turnaround.' Customer B: 'Delivery speed doesn't matter to us, but your prices are too high compared to competitors.' Customer C: 'Fast shipping is critical for our operations.' Customer D: 'I'd pay the same price if it meant better quality, but speed isn't important.' Customer E: 'You're too expensive and too slow - fix both.'"
       },
       "solution_criteria": [
-        "Meal plan covers full day with breakfast, lunch, dinner, and snacks",
-        "Includes pre-workout, during-workout, and post-workout nutrition strategies with appropriate timing",
-        "Emphasizes high carbohydrate intake suitable for endurance athlete",
-        "All meals respect vegetarian diet and nut-free restrictions"
+        "Synthesizes conflicting priorities into a single balanced action item",
+        "Addresses multiple customer concerns without favoring one over others",
+        "Expressed as one concise, actionable sentence"
       ],
-      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-      "scenario": "Testing with a professional endurance athlete (marathon runner) requiring high carbohydrate intake and specific timing around training sessions, including pre-workout, during-workout, and post-workout nutrition strategies"
+      "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+      "scenario": "Testing with conflicting feedback opinions where customers request opposite improvements (e.g., some want faster delivery, others want lower prices), requiring the prompt to synthesize a balanced action item"
     },
-    "score": 8,
-    "reasoning": "The solution comprehensively meets all mandatory requirements with clear daily caloric total, macronutrient breakdown, and detailed meals with portions and timing. It successfully addresses all secondary criteria: high carbohydrate intake (480g stated, ~530g actual), appropriate pre/post-workout nutrition timing, full vegetarian compliance, and nut-free restrictions. The meal plan is practical, well-organized, and athlete-appropriate. The primary weakness is a mathematical inconsistency between stated macronutrient targets and the sum of individual meal macros, particularly for fat content. However, this is a minor documentation issue that doesn't undermine the quality or usability of the meal plan itself."
+    "score": 9,
+    "reasoning": "The solution meets all three mandatory criteria effectively. It synthesizes the conflicting priorities (speed vs. price) into a balanced action item that doesn't favor one customer group over another. It addresses concerns from all five customers without bias. The action item is expressed as essentially one sentence and is clearly actionable. The solution demonstrates strong judgment in recognizing that both concerns are legitimate and warrant investigation rather than choosing one over the other. Minor weaknesses exist in conciseness and the technical sentence count, but these do not violate the stated criteria."
+  },
+  {
+    "output": "# Action Item\n\n**Investigate product quality and functionality issues:** Contact customer to understand specific failures and malfunctions, then conduct a technical review to identify and resolve the underlying problems.",
+    "test_case": {
+      "prompt_inputs": {
+        "feedback": "Your product is absolutely terrible! I hate it so much. The worst purchase ever. Nothing works right and I'm extremely frustrated!"
+      },
+      "solution_criteria": [
+        "Transforms vague emotional language into a specific, concrete action item",
+        "Identifies at least one underlying problem implied by the feedback",
+        "Produces a single, concise, actionable sentence"
+      ],
+      "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+      "scenario": "Testing with highly emotional or vague feedback lacking specific details (e.g., 'Your product is terrible!' or 'Love it!'), requiring the prompt to infer concrete actionable insights"
+    },
+    "score": 3,
+    "reasoning": "The solution demonstrates strong understanding of the feedback and produces actionable insights that address the customer's concerns. However, it fails a mandatory criterion by presenting two sentences instead of one. The format 'Action Item: [sentence one], [sentence two]' constitutes two independent clauses that form two distinct sentences, not a single sentence as required."
+  },
+  {
+    "output": "# Action Item\n\n**Improve shipping packaging durability and meet delivery time commitments** \u2014 while product quality and customer service are strong, the flimsy packaging and shipping delays are creating a negative delivery experience that undermines customer satisfaction.",
+    "test_case": {
+      "prompt_inputs": {
+        "feedback": "The product quality is excellent and arrived in perfect condition, but the packaging was flimsy and arrived partially damaged. Shipping took two weeks longer than promised, which was frustrating. However, the customer service team was incredibly helpful when I called about the delay. Overall, I'm happy with the product itself but disappointed with the delivery experience."
+      },
+      "solution_criteria": [
+        "Identifies a single primary action item that consolidates the multi-faceted feedback",
+        "Action item addresses the most critical issue across the feedback areas (quality, packaging, shipping, service)",
+        "Output is a concise one-sentence action item, not a list or multiple recommendations"
+      ],
+      "task_description": "Summarize customer feedback into a concise one-sentence action item.",
+      "scenario": "Testing with multi-faceted feedback spanning different product/service areas (e.g., packaging complaints combined with quality praise combined with shipping issues), requiring the prompt to prioritize and consolidate into one primary action item"
+    },
+    "score": 6,
+    "reasoning": "The solution successfully identifies a single primary action item that consolidates the multi-faceted feedback and addresses the most critical issues (packaging and shipping delays) that undermine customer satisfaction. However, there is a clear violation of the mandatory requirement for a 'concise one-sentence action item.' The solution presents what reads as two sentences separated by an em dash: the action item itself, followed by an explanatory justification. While the content quality is strong and meets the spirit of the task, the format does not strictly comply with the one-sentence requirement specified in the criteria."
   }
 ]
