@@ -1,3 +1,4 @@
+from http import client
 import sys
 import asyncio
 from typing import Optional, Any
@@ -111,8 +112,10 @@ async def main():
         # If using Python without UV, update command to 'python' and remove "run" from args.
         command="uv",
         args=["run", "mcp_server.py"],
-    ) as _client:
-        pass
+    ) as client:
+#        pass
+        tools = await client.list_tools()
+        print(tools)
 
 
 if __name__ == "__main__":
