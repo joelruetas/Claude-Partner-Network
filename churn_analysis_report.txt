@@ -1,0 +1,263 @@
+
+================================================================================
+                   STREAMING SERVICE CHURN ANALYSIS REPORT
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Overall Churn Rate: 38.6% (193 out of 500 customers)
+Analysis Method: Statistical testing, correlation analysis, and Random Forest 
+                 feature importance modeling
+Model Accuracy: 74.0%
+
+================================================================================
+MAJOR CHURN DRIVERS (RANKED BY IMPORTANCE)
+================================================================================
+
+1. TOTAL VIEWING HOURS (Importance: 0.254) ⭐⭐⭐⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ THE STRONGEST PREDICTOR OF CHURN                                       │
+   │                                                                         │
+   │ • Churned Customers:  66.6 hours/month (average)                      │
+   │ • Retained Customers: 83.2 hours/month (average)                      │
+   │ • Difference: -16.6 hours (-20% decrease)                             │
+   │ • Statistical Significance: p < 0.0001 (highly significant)           │
+   │                                                                         │
+   │ INSIGHT: Customers who watch less content are much more likely to      │
+   │ churn. This indicates disengagement from the platform.                 │
+   └────────────────────────────────────────────────────────────────────────┘
+
+2. AVERAGE SESSION DURATION (Importance: 0.194) ⭐⭐⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ ENGAGEMENT QUALITY INDICATOR                                           │
+   │                                                                         │
+   │ • Churned Customers:  49.4 minutes/session (average)                  │
+   │ • Retained Customers: 57.8 minutes/session (average)                  │
+   │ • Difference: -8.3 minutes (-14% decrease)                            │
+   │ • Statistical Significance: p < 0.0001 (highly significant)           │
+   │                                                                         │
+   │ INSIGHT: Shorter viewing sessions suggest lower engagement and         │
+   │ content satisfaction. Users may not be finding compelling content.     │
+   └────────────────────────────────────────────────────────────────────────┘
+
+3. CUSTOMER SERVICE INTERACTIONS (Importance: 0.138) ⭐⭐⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ SERVICE QUALITY & PROBLEM INDICATOR                                    │
+   │                                                                         │
+   │ • Churned Customers:  3.2 interactions/year (average)                 │
+   │ • Retained Customers: 2.5 interactions/year (average)                 │
+   │ • Difference: +0.7 interactions (+28% increase)                       │
+   │ • Statistical Significance: p < 0.0001 (highly significant)           │
+   │                                                                         │
+   │ INSIGHT: More customer service contacts indicate technical issues,     │
+   │ billing problems, or dissatisfaction. This is a strong churn signal.  │
+   │                                                                         │
+   │ Churn Rate by CS Interactions:                                         │
+   │   • 1 interaction:  ~32% churn                                        │
+   │   • 2 interactions: ~36% churn                                        │
+   │   • 3 interactions: ~38% churn                                        │
+   │   • 4 interactions: ~42% churn                                        │
+   │   • 5 interactions: ~49% churn  ⚠️ HIGH RISK                          │
+   └────────────────────────────────────────────────────────────────────────┘
+
+4. CONTENT VARIETY (Unique Titles) (Importance: 0.129) ⭐⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ CONTENT DISCOVERY & CATALOG SATISFACTION                               │
+   │                                                                         │
+   │ • Churned Customers:  19.5 unique titles/month (average)              │
+   │ • Retained Customers: 23.7 unique titles/month (average)              │
+   │ • Difference: -4.3 titles (-18% decrease)                             │
+   │ • Statistical Significance: p < 0.0001 (highly significant)           │
+   │                                                                         │
+   │ INSIGHT: Churned users explore less content variety, suggesting        │
+   │ either catalog limitations or poor content discovery features.         │
+   └────────────────────────────────────────────────────────────────────────┘
+
+5. BINGE WATCHING SESSIONS (Importance: 0.108) ⭐⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ ENGAGEMENT DEPTH INDICATOR                                             │
+   │                                                                         │
+   │ • Churned Customers:  6.2 sessions/month (average)                    │
+   │ • Retained Customers: 7.7 sessions/month (average)                    │
+   │ • Difference: -1.5 sessions (-20% decrease)                           │
+   │ • Statistical Significance: p < 0.0001 (highly significant)           │
+   │                                                                         │
+   │ INSIGHT: Fewer binge-watching sessions indicate lower content          │
+   │ addiction/engagement. Users are not finding "must-watch" content.     │
+   └────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+CATEGORICAL DRIVERS ANALYSIS
+================================================================================
+
+6. SUBSCRIPTION TIER (Importance: 0.039) ⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ PRICING & VALUE PERCEPTION                                             │
+   │                                                                         │
+   │ Tier      │ Count │ Churned │ Churn Rate │ Monthly Cost                │
+   │───────────┼───────┼─────────┼────────────┼─────────────                │
+   │ Basic     │  207  │   90    │   43.5%    │  $7.99                      │
+   │ Standard  │  210  │   83    │   39.5%    │ $12.99                      │
+   │ Premium   │   83  │   20    │   24.1%    │ $17.99                      │
+   │                                                                         │
+   │ INSIGHT: Basic tier has HIGHEST churn (43.5%), nearly double the      │
+   │ Premium tier (24.1%). This suggests:                                   │
+   │   - Basic features may be too limited                                  │
+   │   - Premium provides better perceived value                            │
+   │   - Price-sensitive customers in Basic tier may switch to competitors  │
+   └────────────────────────────────────────────────────────────────────────┘
+
+7. CONTENT GENRE PREFERENCE (Importance: 0.098) ⭐⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ CONTENT CATALOG STRENGTH BY GENRE                                      │
+   │                                                                         │
+   │ Genre        │ Count │ Churn Rate │ Risk Level                         │
+   │──────────────┼───────┼────────────┼────────────                        │
+   │ Horror       │  44   │   52.3%    │ 🔴 VERY HIGH                       │
+   │ Thriller     │  29   │   48.3%    │ 🔴 VERY HIGH                       │
+   │ Action       │  74   │   44.6%    │ 🟡 HIGH                            │
+   │ Romance      │  55   │   41.8%    │ 🟡 HIGH                            │
+   │ SciFi        │  42   │   40.5%    │ 🟡 MODERATE                        │
+   │ Drama        │ 102   │   35.3%    │ 🟢 MODERATE                        │
+   │ Comedy       │ 100   │   33.0%    │ 🟢 LOW                             │
+   │ Documentary  │  54   │   25.9%    │ 🟢 LOW                             │
+   │                                                                         │
+   │ INSIGHT: Horror and Thriller fans have the highest churn rates,       │
+   │ suggesting weak content catalog in these genres. Documentary has       │
+   │ the lowest churn, indicating strong content in this category.          │
+   └────────────────────────────────────────────────────────────────────────┘
+
+8. MONTHLY COST (Importance: 0.039) ⭐
+   ┌────────────────────────────────────────────────────────────────────────┐
+   │ PRICING SENSITIVITY                                                    │
+   │                                                                         │
+   │ • Churned Customers:  $11.18/month (average)                          │
+   │ • Retained Customers: $12.11/month (average)                          │
+   │ • Difference: -$0.93 (-7.7% lower cost)                               │
+   │ • Statistical Significance: p = 0.0047 (significant)                  │
+   │ • Correlation with Churn: -0.126 (negative)                           │
+   │                                                                         │
+   │ INSIGHT: Churned customers pay LESS on average, reinforcing that      │
+   │ Basic tier customers (who pay less) churn more. Price alone is not    │
+   │ the issue - it's about value for money.                               │
+   └────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+CORRELATION INSIGHTS
+================================================================================
+
+Features Most NEGATIVELY Correlated with Churn (Lower = Less Churn):
+  1. Total Viewing Hours:              -0.246 (strong negative)
+  2. Binge Watching Sessions:          -0.237 (strong negative)
+  3. Unique Titles Watched:            -0.224 (moderate negative)
+  4. Average Session Duration:         -0.218 (moderate negative)
+  5. Monthly Cost:                     -0.126 (weak negative)
+
+Features Most POSITIVELY Correlated with Churn (Higher = More Churn):
+  1. Customer Service Interactions:    +0.279 (moderate positive)
+
+INTERPRETATION: All engagement metrics are negatively correlated with churn,
+meaning higher engagement = lower churn. Customer service interactions are
+the only positive predictor - more contacts = more likely to churn.
+
+================================================================================
+STRATEGIC RECOMMENDATIONS
+================================================================================
+
+🎯 IMMEDIATE ACTIONS (High Priority):
+
+1. EARLY WARNING SYSTEM
+   ► Implement monitoring for customers with:
+     • <70 hours viewing/month (20% below average)
+     • <50 minutes average session duration
+     • 3+ customer service interactions in 6 months
+   ► Trigger proactive retention campaigns
+
+2. BASIC TIER ENHANCEMENT
+   ► Reduce churn from 43.5% by improving Basic tier value:
+     • Add more content/features
+     • Create upgrade incentives to Standard
+     • Consider price adjustment vs. competitive offerings
+
+3. CUSTOMER SERVICE EXCELLENCE
+   ► Each additional CS interaction increases churn risk by ~5-7%
+   ► Focus on first-contact resolution
+   ► Implement proactive outreach after 2+ interactions
+   ► Root cause analysis of common issues
+
+4. CONTENT STRATEGY - HORROR & THRILLER
+   ► These genres have 52% and 48% churn respectively
+   ► Invest in Horror and Thriller content acquisition
+   ► License popular titles in these categories
+   ► Survey users to understand gaps
+
+📊 MEDIUM-TERM INITIATIVES:
+
+5. ENGAGEMENT BOOSTING
+   ► Improve content discovery algorithms
+   ► Personalized recommendations to increase variety
+   ► Create "binge-worthy" content alerts
+   ► Gamification to encourage regular viewing
+
+6. CONTENT CATALOG EXPANSION
+   ► Users watching <20 unique titles/month are at high risk
+   ► Expand catalog diversity
+   ► Improve search and browsing features
+   ► Create curated collections by genre
+
+7. PREMIUM TIER PROMOTION
+   ► Premium has only 24% churn (lowest)
+   ► Create clear upgrade paths
+   ► Showcase premium-only content
+   ► Offer limited-time trials
+
+8. SEGMENT-SPECIFIC STRATEGIES
+   ► Documentary fans: Low churn, maintain quality
+   ► Comedy/Drama fans: Moderate churn, steady investment
+   ► Horror/Thriller fans: High churn, aggressive content acquisition
+
+================================================================================
+PREDICTIVE INDICATORS FOR AT-RISK CUSTOMERS
+================================================================================
+
+A customer is HIGHLY LIKELY to churn if they show:
+  ✗ Viewing hours drop below 70 hours/month
+  ✗ Average session duration under 50 minutes
+  ✗ Contacted customer service 3+ times in past year
+  ✗ Watching fewer than 20 unique titles/month
+  ✗ Fewer than 6 binge-watching sessions/month
+  ✗ On Basic subscription tier
+  ✗ Primary genre is Horror or Thriller
+
+CHURN RISK SCORE FORMULA:
+  Risk = HIGH if 4+ indicators present
+  Risk = MEDIUM if 2-3 indicators present
+  Risk = LOW if 0-1 indicators present
+
+================================================================================
+CONCLUSION
+================================================================================
+
+The analysis reveals that ENGAGEMENT is the primary driver of churn, not price.
+Churned customers show consistently lower engagement across all metrics:
+  - 20% less viewing time
+  - 14% shorter sessions
+  - 18% less content variety
+  - 20% fewer binge sessions
+
+Combined with more customer service issues (+28%), this suggests that users
+are becoming frustrated or dissatisfied, leading to disengagement and eventual
+churn.
+
+The solution is NOT price reduction, but rather:
+  ✓ Improving content quality and variety (especially Horror/Thriller)
+  ✓ Enhancing the user experience to reduce support needs
+  ✓ Boosting engagement through better recommendations
+  ✓ Providing better value at the Basic tier
+
+By addressing these root causes, the streaming service can significantly
+reduce the 38.6% churn rate and improve customer lifetime value.
+
+================================================================================
+END OF REPORT
+================================================================================
